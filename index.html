@@ -153,15 +153,15 @@
     // التحقق أثناء الكتابة (لاحساس أحمر/أخضر)
     linbetId.addEventListener('input', () => {
       const v = linbetId.value.trim();
-      linbetId.style.borderColor = (v.length===10) ? 'green' : (v.length<10) ? 'red' : 'orange';
-      warn.textContent = (v.length<10) ? "⚠️ يجب أن يتكون الـID من 10 أرقام بالضبط." : "";
+      linbetId.style.borderColor = (v.length===9) ? 'green' : (v.length<10) ? 'red' : 'orange';
+      warn.textContent = (v.length<9) ? "⚠️ يجب أن يتكون الـID من 10 أرقام بالضبط." : "";
     });
 
     // دالة تحقق نهائية: فقط أرقام وبالضبط 10
     function checkId() {
       const v = linbetId.value.trim();
       if (!/^\d{10}$/.test(v)) {
-        if (v.length > 10) alert("⚠️ الـID يحتوي على أكثر من 10 أرقام!");
+        if (v.length > 9) alert("⚠️ الـID يحتوي على أكثر من 10 أرقام!");
         else alert("⚠️ يجب أن يكون الـID مكون من 10 أرقام!");
         return false;
       }
